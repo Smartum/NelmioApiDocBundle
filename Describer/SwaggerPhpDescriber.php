@@ -126,7 +126,7 @@ final class SwaggerPhpDescriber extends ExternalDocDescriber implements ModelReg
                     continue;
                 }
 
-                if (!$annotation instanceof SWG\Response && !$annotation instanceof SWG\Parameter && !$annotation instanceof SWG\ExternalDocumentation) {
+                if (!$annotation instanceof SWG\Response && !$annotation instanceof SWG\Parameter && !$annotation instanceof SWG\ExternalDocumentation && !$annotation instanceof SWG\Swagger) {
                     throw new \LogicException(sprintf('Using the annotation "%s" as a root annotation in "%s::%s()" is not allowed.', get_class($annotation), $method->getDeclaringClass()->name, $method->name));
                 }
 
